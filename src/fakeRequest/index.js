@@ -6,7 +6,7 @@ export const getFakeData1 = () => {
       firstName: `John${index}`
     })
   }
-  return Promise.resolve().then(() => data)
+  return Promise.resolve().then(() => unsort(data))
 }
 
 export const getFakeData2 = () => {
@@ -17,5 +17,21 @@ export const getFakeData2 = () => {
       lastName: `Doe${index}`
     })
   }
-  return Promise.resolve().then(() => data)
+  return Promise.resolve().then(() => unsort(data))
+}
+
+const unsort = array => {
+  let currentIndex = array.length
+  let randomIndex
+
+  while (currentIndex !== 0) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]]
+  }
+
+  return array
 }
