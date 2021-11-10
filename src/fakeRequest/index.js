@@ -6,7 +6,7 @@ export const getFakeData1 = () => {
       firstName: `John${index}`
     })
   }
-  return Promise.resolve().then(() => unsort(data))
+  return Promise.resolve().then(() => shuffle(data))
 }
 
 export const getFakeData2 = () => {
@@ -17,10 +17,10 @@ export const getFakeData2 = () => {
       lastName: `Doe${index}`
     })
   }
-  return Promise.resolve().then(() => unsort(data))
+  return Promise.resolve().then(() => shuffle(data))
 }
 
-const unsort = array => {
+const shuffle = array => {
   let currentIndex = array.length
   let randomIndex
 
