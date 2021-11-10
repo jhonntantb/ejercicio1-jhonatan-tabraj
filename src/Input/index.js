@@ -24,9 +24,6 @@ export default class Input extends Component {
     }
   }
 
-  changeInputValue = (value) =>
-    this.setState({ inputValueInComponent: value })
-
   render() {
     const { inputValueInComponent } = this.state
     const { onChangeInputValue } = this.props
