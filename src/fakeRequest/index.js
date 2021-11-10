@@ -1,23 +1,32 @@
+import { v4 as uuidv4 } from 'uuid';
+
+const ids = []
+for (let index = 0; index < 50; index++) {
+  ids.push(uuidv4())
+}
+
+const data1 = []
+for (let index = 0; index < 100; index++) {
+  data1.push({
+    id:  index < 50 ? ids[index] : uuidv4(),
+    firstName: `John${index}`
+  })
+}
+
+const data2 = []
+for (let index = 0; index < 100; index++) {
+  data2.push({
+    id:  index < 50 ? ids[index] : uuidv4(),
+    lastName: `Doe${index}`
+  })
+}
+
 export const getFakeData1 = () => {
-  const data = []
-  for (let index = 0; index < 100; index++) {
-    data.push({
-      id: index,
-      firstName: `John${index}`
-    })
-  }
-  return Promise.resolve().then(() => shuffle(data))
+  return Promise.resolve().then(() => shuffle(data1))
 }
 
 export const getFakeData2 = () => {
-  const data = []
-  for (let index = 0; index < 100; index++) {
-    data.push({
-      id: index,
-      lastName: `Doe${index}`
-    })
-  }
-  return Promise.resolve().then(() => shuffle(data))
+  return Promise.resolve().then(() => shuffle(data2))
 }
 
 const shuffle = array => {
