@@ -1,0 +1,7 @@
+.image {
+    background-image:url(../resources/logo512.png);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    width: 1000px;
+    height: 1000px;
+}
